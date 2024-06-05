@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/index.js"></script>
+  <title>ContactApp</title>
+</head>
+<body>
+  <!-- Page principale -->
+  <div data-role="page" id="mainPage">
+    <div data-role="header">
+      <h1>Contact Tel</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <a href="#addContactPage" data-role="button" data-icon="plus">Ajouter un Contact</a>
+      <a href="#" data-role="button" data-icon="refresh" onclick="loadContacts()">Charger les Contacts</a>
+      <ul id="contactList" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Rechercher contact">
+      </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h1>DIC3 &copy; 2024</h1>
+    </div>
+  </div>
+
+  <!-- Page pour ajouter un contact -->
+  <div data-role="page" id="addContactPage">
+    <div data-role="header">
+      <a href="#mainPage" data-role="button" data-icon="back">Retour</a>
+      <h1>Ajouter un Contact</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <form id="addContactForm">
+        <label for="contactNameInput">Nom:</label>
+        <input type="text" id="contactNameInput" name="contactName">
+        <label for="contactPhoneInput">Téléphone:</label>
+        <input type="tel" id="contactPhoneInput" name="contactPhone">
+        <label for="contactEmailInput">Email:</label>
+        <input type="email" id="contactEmailInput" name="contactEmail">
+        <input type="button" value="Ajouter" onclick="addNewContact()">
+      </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h1>DIC3 &copy; 2024</h1>
+    </div>
+  </div>
+
+  <!-- Page de détails du contact -->
+  <div data-role="page" id="contactDetails">
+    <div data-role="header">
+      <a href="#mainPage" data-role="button" data-icon="arrow-l">Retour</a>
+      <h1>Détails du Contact</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <img id="contactImage" src="img/contact_logo.png" alt="Photo de profil">
+      <h1 id="contactName"></h1>
+      <p id="contactPhone"></p>
+      <p id="contactEmail"></p>
+      <a href="#" id="editButton" data-role="button" data-icon="edit">Modifier</a>
+      <a href="#" id="deleteButton" data-role="button" data-icon="delete">Supprimer</a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h1>DIC3 &copy; 2024</h1>
+    </div>
+  </div>
+
+     <div data-role="page" id="editContactPage">
+        <div data-role="header">
+          <a href="#contactDetails" data-role="button" data-icon="arrow-l">Retour</a>
+          <h1>Modifier le Contact</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+          <form id="editContactForm">
+            <label for="editContactName">Nom:</label>
+            <input type="text" id="editContactName" name="name">
+            <label for="editContactPhone">Téléphone:</label>
+            <input type="text" id="editContactPhone" name="phone">
+            <label for="editContactEmail">Email:</label>
+            <input type="text" id="editContactEmail" name="email">
+            <input type="button" value="Sauvegarder" onclick="saveContactEdits()">
+          </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+          <h1>DIC3 &copy; 2024</h1>
+        </div>
+      </div>
+  </div>
+</body>
+</html> 
+

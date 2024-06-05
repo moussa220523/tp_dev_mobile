@@ -1,0 +1,42 @@
+[data-role="page"] {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+[data-role="main"] {
+    padding: 20px;
+    text-align: center;
+}
+
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#currentTaskList,#completedTaskList {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#currentTaskList li #completedTaskList li{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+[data-role="footer"] {
+    width: 600px;
+}
